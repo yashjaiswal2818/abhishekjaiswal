@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Image from "next/image";
 import TypewriterText from "./TypewriterText";
 import PostageStamp from "./PostageStamp";
 
@@ -6,15 +7,18 @@ import PostageStamp from "./PostageStamp";
 function USAALogo() {
   return (
     <div className="flex h-12 items-center gap-2">
-      <svg height="32" viewBox="0 0 100 32" fill="none" aria-label="USAA">
-        <rect x="0" y="0" width="32" height="32" rx="4" fill="#003087" />
-        <text x="16" y="22" textAnchor="middle" fontFamily="var(--font-inter), sans-serif" fontWeight="800" fontSize="10" fill="white" letterSpacing="0.5">
-          USAA
-        </text>
-        <text x="44" y="22" fontFamily="var(--font-inter), sans-serif" fontWeight="700" fontSize="15" fill="#003087" letterSpacing="-0.3">
-          USAA
-        </text>
-      </svg>
+      <span className="relative h-8 w-8 overflow-hidden rounded-[4px]">
+        <Image
+          src="/assets/usaa-logo.png"
+          alt="USAA"
+          fill
+          sizes="32px"
+          className="object-cover"
+        />
+      </span>
+      <span className="font-sans text-[15px] font-bold tracking-[-0.3px] text-[#003087]">
+        USAA
+      </span>
     </div>
   );
 }
@@ -23,15 +27,18 @@ function USAALogo() {
 function TCSLogo() {
   return (
     <div className="flex h-12 items-center gap-2">
-      <svg height="32" viewBox="0 0 90 32" fill="none" aria-label="TCS">
-        <rect x="0" y="0" width="32" height="32" rx="4" fill="#0063BF" />
-        <text x="16" y="22" textAnchor="middle" fontFamily="var(--font-inter), sans-serif" fontWeight="800" fontSize="12" fill="white" letterSpacing="0.5">
-          TCS
-        </text>
-        <text x="42" y="22" fontFamily="var(--font-inter), sans-serif" fontWeight="600" fontSize="13" fill="#0063BF" letterSpacing="-0.2">
-          Tata Consultancy
-        </text>
-      </svg>
+      <span className="relative h-8 w-8 overflow-hidden rounded-[4px] bg-white">
+        <Image
+          src="/assets/tcs-logo-v3.png"
+          alt="TCS"
+          fill
+          sizes="32px"
+          className="object-contain"
+        />
+      </span>
+      <span className="font-sans text-[13px] font-semibold tracking-[-0.2px] text-[#0063BF]">
+        Tata Consultancy
+      </span>
     </div>
   );
 }
@@ -40,13 +47,18 @@ function TCSLogo() {
 function AirfindLogo() {
   return (
     <div className="flex h-12 items-center gap-2">
-      <svg height="28" viewBox="0 0 88 28" fill="none" aria-label="Airfind">
-        <circle cx="14" cy="14" r="14" fill="#00AEEF" />
-        <path d="M8 14 Q14 6 20 14 Q14 22 8 14z" fill="white" />
-        <text x="32" y="19" fontFamily="var(--font-inter), sans-serif" fontWeight="700" fontSize="14" fill="#00AEEF" letterSpacing="-0.2">
-          Airfind
-        </text>
-      </svg>
+      <span className="relative h-8 w-8 overflow-hidden rounded-[4px] bg-white">
+        <Image
+          src="/assets/airfind-logo.png"
+          alt="Airfind"
+          fill
+          sizes="32px"
+          className="object-contain"
+        />
+      </span>
+      <span className="font-sans text-[14px] font-bold tracking-[-0.2px] text-[#d6a31a]">
+        Airfind
+      </span>
     </div>
   );
 }
@@ -55,15 +67,18 @@ function AirfindLogo() {
 function MediaNetLogo() {
   return (
     <div className="flex h-12 items-center gap-2">
-      <svg height="28" viewBox="0 0 96 28" fill="none" aria-label="Media.net">
-        <rect x="0" y="4" width="20" height="20" rx="3" fill="#E85D04" />
-        <text x="10" y="18" textAnchor="middle" fontFamily="var(--font-inter), sans-serif" fontWeight="800" fontSize="10" fill="white">
-          m
-        </text>
-        <text x="26" y="19" fontFamily="var(--font-inter), sans-serif" fontWeight="700" fontSize="14" fill="#E85D04" letterSpacing="-0.2">
-          Media.net
-        </text>
-      </svg>
+      <span className="relative h-8 w-8 overflow-hidden rounded-[4px] bg-white">
+        <Image
+          src="/assets/media-net-logo.png"
+          alt="Media.net"
+          fill
+          sizes="32px"
+          className="object-contain"
+        />
+      </span>
+      <span className="font-sans text-[14px] font-bold tracking-[-0.2px] text-[#111111]">
+        Media.net
+      </span>
     </div>
   );
 }

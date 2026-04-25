@@ -1,16 +1,23 @@
+import Image from "next/image";
+
 /* ─── Impact Numbers Section — auto-scrolling ticker ─── */
 
 function USAALogo() {
   return (
-    <svg height="20" viewBox="0 0 80 20" fill="none" aria-label="USAA via TCS">
-      <rect x="0" y="0" width="28" height="20" rx="3" fill="#003087" />
-      <text x="14" y="14" textAnchor="middle" fontFamily="var(--font-inter),sans-serif" fontWeight="800" fontSize="8" fill="white" letterSpacing="0.3">
-        USAA
-      </text>
-      <text x="34" y="14" fontFamily="var(--font-inter),sans-serif" fontWeight="600" fontSize="11" fill="#003087">
+    <div className="flex h-5 items-center gap-1.5" aria-label="USAA via TCS">
+      <span className="relative h-5 w-7 overflow-hidden rounded-[3px]">
+        <Image
+          src="/assets/usaa-logo.png"
+          alt="USAA"
+          fill
+          sizes="28px"
+          className="object-cover"
+        />
+      </span>
+      <span className="font-sans text-[11px] font-semibold text-[#003087]">
         via TCS
-      </text>
-    </svg>
+      </span>
+    </div>
   );
 }
 

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 /* ─── About Section ─── */
 
 /* ── Tool icons (colored pill + name) ── */
@@ -5,18 +7,30 @@ function ToolIcon({
   name,
   color,
   initial,
+  logoSrc,
 }: {
   name: string;
   color: string;
   initial: string;
+  logoSrc?: string;
 }) {
   return (
     <span className="inline-flex items-center gap-1.5">
       <span
         className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg text-[11px] font-bold text-white"
-        style={{ background: color }}
+        style={{ background: logoSrc ? "#ffffff" : color }}
       >
-        {initial}
+        {logoSrc ? (
+          <Image
+            src={logoSrc}
+            alt={name}
+            width={32}
+            height={32}
+            className="h-full w-full object-contain"
+          />
+        ) : (
+          initial
+        )}
       </span>
       <span className="text-base leading-none text-ink">{name}</span>
     </span>
@@ -24,22 +38,22 @@ function ToolIcon({
 }
 
 const TOOLS = [
-  { name: "Python", color: "#3776ab", initial: "Py" },
-  { name: "SQL", color: "#336791", initial: "Sq" },
-  { name: "Snowflake", color: "#29b5e8", initial: "Sf" },
-  { name: "Claude API", color: "#d97757", initial: "Cl" },
-  { name: "LangChain", color: "#1c3c3c", initial: "Lc" },
-  { name: "AWS", color: "#FF9900", initial: "AW" },
-  { name: "Tableau", color: "#E97627", initial: "Tb" },
-  { name: "Power BI", color: "#F2C811", initial: "PB" },
-  { name: "dbt", color: "#FF694A", initial: "db" },
-  { name: "Airflow", color: "#017CEE", initial: "Af" },
-  { name: "Docker", color: "#2496ED", initial: "Dk" },
-  { name: "Streamlit", color: "#FF4B4B", initial: "St" },
-  { name: "JIRA", color: "#0052CC", initial: "Ji" },
-  { name: "GitHub", color: "#24292f", initial: "Gh" },
-  { name: "Azure ML", color: "#0078D4", initial: "Az" },
-  { name: "BigQuery", color: "#4285F4", initial: "BQ" },
+  { name: "Python", color: "#3776ab", initial: "Py", logoSrc: "/assets/python-logo.png" },
+  { name: "SQL", color: "#336791", initial: "Sq", logoSrc: "/assets/sql-logo.png" },
+  { name: "Snowflake", color: "#29b5e8", initial: "Sf", logoSrc: "/assets/snowflake-logo.png" },
+  { name: "Claude API", color: "#d97757", initial: "Cl", logoSrc: "/assets/claude-api-logo.png" },
+  { name: "LangChain", color: "#1c3c3c", initial: "Lc", logoSrc: "/assets/langchain-logo.png" },
+  { name: "AWS", color: "#FF9900", initial: "AW", logoSrc: "/assets/aws-logo.png" },
+  { name: "Tableau", color: "#E97627", initial: "Tb", logoSrc: "/assets/tableau-logo.png" },
+  { name: "Power BI", color: "#F2C811", initial: "PB", logoSrc: "/assets/power-bi-logo.png" },
+  { name: "dbt", color: "#FF694A", initial: "db", logoSrc: "/assets/dbt-logo.png" },
+  { name: "Airflow", color: "#017CEE", initial: "Af", logoSrc: "/assets/airflow-logo.png" },
+  { name: "Docker", color: "#2496ED", initial: "Dk", logoSrc: "/assets/docker-logo.png" },
+  { name: "Streamlit", color: "#FF4B4B", initial: "St", logoSrc: "/assets/streamlit-logo.png" },
+  { name: "JIRA", color: "#0052CC", initial: "Ji", logoSrc: "/assets/jira-logo.png" },
+  { name: "GitHub", color: "#24292f", initial: "Gh", logoSrc: "/assets/github-logo.png" },
+  { name: "Azure ML", color: "#0078D4", initial: "Az", logoSrc: "/assets/azure-ml-logo.png" },
+  { name: "BigQuery", color: "#4285F4", initial: "BQ", logoSrc: "/assets/bigquery-logo.png" },
 ];
 
 /* ── Tools RTL ticker ── */

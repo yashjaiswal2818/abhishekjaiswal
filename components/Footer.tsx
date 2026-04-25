@@ -57,7 +57,7 @@ function CodexIcon() {
         fontWeight="700"
         fill="white"
       >
-        {"</>"}
+        
       </text>
     </svg>
   );
